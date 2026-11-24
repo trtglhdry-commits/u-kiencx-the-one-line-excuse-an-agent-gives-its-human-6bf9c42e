@@ -37,6 +37,7 @@ function main(): void {
 
   const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
   mkdirSync(outDir, { recursive: true });
+  // File is ENTRY + "\n" (67 bytes); the gate counts the 66-char text.
   writeFileSync(join(outDir, "entry.txt"), ENTRY + "\n", "utf8");
 }
 
